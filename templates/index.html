@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<!--[if lt IE 7]>
+<html lang="en" ng-app="BankFinder" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="BankFinder" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="BankFinder" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="BankFinder" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BankFinder</title>
+    <meta name="description" content="Finding hotel deals made easy">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href={% static "assets/libs/bootstrap-theme-custom.min.css" %}>
+    <link rel="stylesheet" href={% static "assets/app.css" %}>
+
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom affix-top">
+        <div class="container-fluid text-center">
+            <div class="logo">
+                <a href class="navbar-brand">BankFinder</a>
+                <small class="description">Finding banks by Name, City or IFSC code</small>
+            </div>
+
+        </div>
+    </nav>
+
+</header>
+<section ng-view></section>
+<footer>
+</footer>
+<script src="{% static 'assets/libs/jquery.min.js' %}"></script>
+<script src="{% static 'assets/libs/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/libs/angular.min.js' %}"></script>
+<script src="{% static 'assets/libs/angular-route.min.js' %}"></script>
+<script src="{% static 'assets/libs/angular-resource.min.js' %}"></script>
+
+
+<script src="{% static 'bank/config/app.js' %}"></script>
+
+</body>
+</html>
