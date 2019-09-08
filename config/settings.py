@@ -3,14 +3,10 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# based on local.py is in <PROJECT_ROOT>/settings
-
 PROJECT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)
 
 # Name of the directory for the project.
 PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
-
-# Quick-start development settings - unsuitable for production
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'smhp$3)1*fzc8(ptv_1**kmtq!z+o^9)dsy(u8iijyeo&$(+mn'
@@ -117,7 +113,6 @@ if DEBUG == False:
     STATIC_ROOT = os.path.join((BASE_DIR), 'static')
 else:
     STATIC_URL = '/static/'
-
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "static", "mediaroot")
 
