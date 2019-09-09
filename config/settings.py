@@ -10,7 +10,9 @@ PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = True
+
+ENV = os.environ.get('ENVIRONMENT', 'local')
 
 SITE_ID = 1
 
@@ -72,7 +74,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination'
 }
 
-if DEBUG:
+if ENV == 'local':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -102,7 +104,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-if DEBUG:
+if ENV == 'local':
     STATICFILES_DIRS = (
         os.path.join(PROJECT_ROOT, "static"),
     )
