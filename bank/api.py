@@ -67,7 +67,7 @@ class BankBranchView(APIView):
     """
     Info:
       Content-Type: application/json
-      url:  <IP_address>/api//bank-branch/?city=<City Name>&bank=<Bank name>
+      url:  <IP_address>/api/bank-branch/?city=<City Name>&bank=<Bank name>
       :arg: city: City Name
       :arg: bank: Bank Name
       description: BankBranchView is used to get Branch details by City and Bank name
