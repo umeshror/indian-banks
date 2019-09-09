@@ -7,22 +7,22 @@
                         <h4 class="text-center">
                             Search by Bank name and City name
                         </h4>
-                        <form name="cityBranchForm"
+                        <form name="cityBankForm"
                               ng-submit="vm.getBranchesByBankCity()"
                               novalidate>
 
                             <label for="bank">Enter Bank name :</label>
-                            <input ng-model="vm.cityBranch.bank"
+                            <input ng-model="vm.cityBank.bank"
                                    placeholder="e.g. State Bank of India" id="bank"
                                    type="text" class="form-control" required>
                             <br>
 
                             <label for="city">Enter City :</label>
-                            <input ng-model="vm.cityBranch.city"
+                            <input ng-model="vm.cityBank.city"
                                    placeholder="e.g. Pune"
                                    type="text" class="form-control" id="city" required>
                             <br>
-                            <button type="submit" ng-disabled="cityBranchForm.$invalid"
+                            <button type="submit" ng-disabled="cityBankForm.$invalid"
                                     class="btn text-center btn-primary">Search Branches
                             </button>
                         </form>
@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div ng-if="vm.banks.length" class="alert alert-success" role="alert"> {{ vm.banks.length }} records found!</div>
+    <div ng-if="vm.banks.length" class="alert alert-success" role="alert"> {{ vm.banks.length }} record found!</div>
 
     <div class="alert alert-warning alert-dismissible" ng-if="vm.errorMessage" role="alert">
         <button type="button"

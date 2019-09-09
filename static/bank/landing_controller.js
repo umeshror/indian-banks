@@ -12,7 +12,7 @@
 
         vm.banks = [];
         vm.bankIFSC = {};
-        vm.cityBranch = {};
+        vm.cityBank = {};
         vm.errorMessage = null;
 
         vm.getBranchesByIFSC = getBranchesByIFSC;
@@ -20,7 +20,10 @@
 
 
         function getBranchesByBankCity() {
-            BankBranchResource.query(vm.cityBranch, function (success_data) {
+            /*
+            Gives list of Banks by City and Bank Name
+             */
+            BankBranchResource.query(vm.cityBank, function (success_data) {
                 vm.banks = success_data;
                 vm.errorMessage = null;
             }, function (error_data) {
@@ -29,6 +32,9 @@
         }
 
         function getBranchesByIFSC() {
+             /*
+            Gives Bank by IFSC code
+             */
             BranchIFSCResource.get(vm.bankIFSC, function (success_data) {
                 vm.banks = [success_data];
                 vm.errorMessage = null;
