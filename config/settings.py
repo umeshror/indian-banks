@@ -10,7 +10,7 @@ PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', False)
 
 SITE_ID = 1
 
@@ -101,7 +101,6 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 
 if DEBUG:
     STATICFILES_DIRS = (
