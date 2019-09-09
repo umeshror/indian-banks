@@ -1,23 +1,22 @@
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
+import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 PROJECT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)
 
-# Name of the directory for the project.
 PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'smhp$3)1*fzc8(ptv_1**kmtq!z+o^9)dsy(u8iijyeo&$(+mn'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = ['treebo.herokuapp.com',
-                 '127.0.0.1']
-# Application definition
 SITE_ID = 1
+
+ALLOWED_HOSTS = ['indianbankfinder.herokuapp.com',
+                 '127.0.0.1']
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +39,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 )
 
 ROOT_URLCONF = 'config.urls'
@@ -72,19 +72,23 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination'
 }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'indian_bank',
-        'USER': 'admin',
-        'PASSWORD': 'admin123',
-        'HOST': 'localhost',
-        'PORT': '5432'
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'indian_bank',
+            'USER': 'admin',
+            'PASSWORD': 'admin123',
+            'HOST': 'localhost',
+            'PORT': '5432'
+        }
     }
-}
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.8/topics/i18n/
+else:
+    DATABASES = {
+        'default': dj_database_url.config(
+                default=os.environ.get('DATABASE_URL')
+        )
+    }
 
 LANGUAGE_CODE = 'en-us'
 
@@ -96,9 +100,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 STATICFILES_DIRS = (
@@ -106,13 +107,9 @@ STATICFILES_DIRS = (
     # development process
 )
 
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
 if DEBUG == False:
-    STATIC_URL = '/static/'
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     STATIC_ROOT = os.path.join((BASE_DIR), 'static')
-else:
-    STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "static", "mediaroot")
 
