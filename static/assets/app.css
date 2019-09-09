@@ -1,0 +1,201 @@
+header {
+    padding-bottom: 80px;
+
+}
+
+.container-fluid {
+    max-width: 1200px;
+}
+
+.search-box-wrapper {
+    padding-bottom: 15px;
+}
+
+.action-anchor {
+    display: inline-block;
+    margin: 0 3px;
+    opacity: 0.85;
+    transition: all 0.1s ease 0s;
+    cursor: pointer;
+}
+
+.action-anchor:hover {
+    opacity: 1;
+    text-decoration: none;
+    transform: scale(1.20);
+    color: #2c3e50;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/*====================navbar===================*/
+.navbar-brand {
+    font-size: 32px;
+    padding-top: 5px;
+}
+
+.navbar-brand, .description {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.description {
+    color: white;
+    margin-top: 40px;
+    margin-left: -15px;
+}
+
+@media screen and  (max-width: 820px) {
+    .description {
+        margin-left: 0;
+    }
+}
+
+/*====================card======================*/
+
+.sort-filter-group {
+    padding-top: 10px;
+    margin: 5px;
+}
+
+.sort-filter-group .radio-inline {
+    padding-right: 8px;
+}
+
+.sort-filter-group .sort-by {
+    font-size: 17px;
+    padding-right: 5px;
+
+}
+
+/*====================card======================*/
+@media screen and  (min-width: 820px) {
+    .bank-card-wrapper {
+        padding-top: 10px !important;
+    }
+}
+
+.bank-card {
+    padding: 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.bank-card:hover {
+    border: solid 1px #313567;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+@media screen and  (max-width: 820px) {
+
+    .bank-column {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .content-wrapper {
+        padding-top: 10px;
+        padding-left: 35px;
+    }
+}
+
+@media screen and  (max-width: 992px) {
+    .bank-card {
+        max-width: 470px;
+        margin: 10px auto;
+    }
+}
+
+.bank-card img {
+    overflow: hidden;
+    max-height: 150px;
+}
+
+.padding-r-0 {
+    padding-right: 0;
+}
+
+.padding-l-0 {
+    padding-left: 0;
+}
+
+.padding-lr-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.content-wrapper {
+    padding-top: 10px;
+}
+
+.content-title {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.content-rating{
+    color : #2c3e50;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.content-tag {
+    background: rgba(0, 0, 0, 0.05) none repeat scroll 0 0;
+    color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    font-size: 16px;
+    line-height: 40px;
+    margin: -10px -1px 0 0;
+    padding: 0 10px;
+    white-space: nowrap;
+}
+
+.content-url {
+    padding-top: 15px;
+    padding-right: 10px;
+}
+.content-like{
+    font-size: 18px;
+}
+@media screen and (max-width: 500px) {
+    .content-tag {
+        font-size: 11px !important;
+        padding: 0 4px !important;
+
+    }
+
+    .content-title {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .content-url {
+        font-size: 13px;
+    }
+
+    .bank-card img {
+        max-height: 150px;
+    }
+}
+
+/*====================page header======================*/
+
+
+.banks-count {
+    font-size: 27px;
+    text-decoration: none;
+}
+
+
+footer {
+    padding-top: 100px;
+}
