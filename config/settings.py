@@ -10,7 +10,7 @@ PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = os.environ.get('DEBUG', True)
+DEBUG = os.environ.get('DEBUG', False)
 
 SITE_ID = 1
 
@@ -71,24 +71,24 @@ WSGI_APPLICATION = 'config.wsgi.application'
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination'
 }
-#
-# if DEBUG:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#             'NAME': 'indian_bank',
-#             'USER': 'admin',
-#             'PASSWORD': 'admin123',
-#             'HOST': 'localhost',
-#             'PORT': '5432'
-#         }
-#     }
-# else:
-DATABASES = {
-    'default': dj_database_url.config(
-            default=os.environ.get('DATABASE_URL')
-    )
-}
+
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'indian_bank',
+            'USER': 'admin',
+            'PASSWORD': 'admin123',
+            'HOST': 'localhost',
+            'PORT': '5432'
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.config(
+                default=os.environ.get('DATABASE_URL')
+        )
+    }
 
 LANGUAGE_CODE = 'en-us'
 
@@ -103,12 +103,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 
-# if DEBUG:
-#     STATICFILES_DIRS = (
-#         os.path.join(PROJECT_ROOT, "static"),
-#     )
-
-if DEBUG == False:
+if DEBUG:
+    STATICFILES_DIRS = (
+        os.path.join(PROJECT_ROOT, "static"),
+    )
+else:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     STATIC_ROOT = os.path.join((BASE_DIR), 'static')
 
