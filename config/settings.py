@@ -10,7 +10,7 @@ PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = False
 
 SITE_ID = 1
 
