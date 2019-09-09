@@ -26,7 +26,7 @@ class BranchIFSCView(APIView):
     """
     Info:
       Content-Type: application/json
-      url:  <IP>/branch-ifsc/<desired IFSC code>
+      url:  <IP_address>/api/branch-ifsc/<desired IFSC code>
       description: BranchIFSCView is used to retrieve Branch details by sending IFSC code
       version: 1.0
       test: tests/TestBranchIFSCView
@@ -67,7 +67,7 @@ class BankBranchView(APIView):
     """
     Info:
       Content-Type: application/json
-      url:  <IP>/bank-branch/?city=<City Name>&bank=<Bank name>
+      url:  <IP_address>/api//bank-branch/?city=<City Name>&bank=<Bank name>
       :arg: city: City Name
       :arg: bank: Bank Name
       description: BankBranchView is used to get Branch details by City and Bank name

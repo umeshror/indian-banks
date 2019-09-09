@@ -8,8 +8,8 @@ from bank.views import index
 
 urlpatterns = [
     url(r'^$', index, name='index'),
-    url(r'^branch-ifsc/(?P<ifsc_code>.*)/$', BranchIFSCView.as_view(), name="branch-ifsc"),
-    url(r'^bank-branch/$', BankBranchView.as_view(), name="bank-branch"),
+    url(r'^api/branch-ifsc/(?P<ifsc_code>.*)/$', BranchIFSCView.as_view(), name="branch-ifsc"),
+    url(r'^api/bank-branch/$', BankBranchView.as_view(), name="bank-branch"),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', include(admin.site.urls)),
 ]

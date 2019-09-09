@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from rest_framework.reverse import reverse
 from rest_framework.test import APITestCase
 
-from bank import Bank, Branch
+from bank.models import Bank, Branch
 
 
 class TestBranchIFSCView(APITestCase):
