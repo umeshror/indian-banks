@@ -71,24 +71,24 @@ WSGI_APPLICATION = 'config.wsgi.application'
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination'
 }
-
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'indian_bank',
-            'USER': 'admin',
-            'PASSWORD': 'admin123',
-            'HOST': 'localhost',
-            'PORT': '5432'
-        }
-    }
-else:
-    DATABASES = {
-        'default': dj_database_url.config(
-                default=os.environ.get('DATABASE_URL')
-        )
-    }
+#
+# if DEBUG:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'indian_bank',
+#             'USER': 'admin',
+#             'PASSWORD': 'admin123',
+#             'HOST': 'localhost',
+#             'PORT': '5432'
+#         }
+#     }
+# else:
+DATABASES = {
+    'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL')
+    )
+}
 
 LANGUAGE_CODE = 'en-us'
 
