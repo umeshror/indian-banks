@@ -1,7 +1,7 @@
 # Indian Bank Finder app
 ### URL: https://indianbankfinder.herokuapp.com 
 
-This is Django app build for fetching Bank branch details of the banks in India.
+This is a Django app build for fetching Bank branch details of the banks in India.
 This app has 2 API' as following:
 
 1. API to get a branch by IFSC code:
