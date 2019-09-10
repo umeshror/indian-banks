@@ -30,11 +30,11 @@ This app has 2 API' as following:
 
 To import db in postgres: *psql indian_bank < indian_banks.sql*
  
-To run server: *python manage.py runserver_plus* 
+To run server: *python manage.py **runserver_plus*** 
 
-To migrate : *python manage.py migrate*
+To migrate : *python manage.py **migrate***
  
-To run test cases: *python manage.py test* 
+To run test cases: *python manage.py **test*** 
 
 You can access admin panel at:
 
