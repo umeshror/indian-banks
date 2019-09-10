@@ -4,7 +4,7 @@
 This is a **Django** app build for fetching Bank branch details of the banks in India.
 This app has 2 API' as following:
 
-**AngularJS** is used for Frontend.
+**AngularJS** is used for frontend.
 
 **Postgres** is used for database.
 
