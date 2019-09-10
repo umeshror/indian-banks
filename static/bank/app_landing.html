@@ -1,4 +1,5 @@
 <div class="container-fluid">
+
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="search-box-wrapper">
@@ -31,8 +32,6 @@
                         <h4 class="text-center">
                             Search by IFSC code
                         </h4>
-                        <br>
-                        <br>
                         <form name="bankIFSCForm"
                               ng-submit="vm.getBranchesByIFSC()"
                               class="bank-IFSC-Form" novalidate>
@@ -41,7 +40,6 @@
                                    placeholder="e.g. ABHY0065001"
                                    class="form-control" id="ifsc"
                                    required>
-                            <br>
                             <br>
                             <button type="submit" ng-disabled="bankIFSCForm.$invalid"
                                     class="btn text-center btn-primary">Search Branch
@@ -63,41 +61,36 @@
         {{vm.errorMessage}}
     </div>
 
-    <div class="bank-card-wrapper">
-        <div ng-repeat="bank in vm.banks" ng-class="{'row': $odd}">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="thumbnail bank-card">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>IFSC</th>
-                            <td>{{ bank.ifsc }}</td>
-                        </tr>
-                        <tr>
-                            <th>Branch</th>
-                            <td>{{ bank.branch }}</td>
-                        </tr>
-                        <tr>
-                            <th>District</th>
-                            <td>{{ bank.district }}</td>
-                        </tr>
-                        <tr>
-                            <th>City</th>
-                            <td>{{ bank.city }}</td>
-                        </tr>
-                        <tr>
-                            <th>State</th>
-                            <td>{{ bank.state }}</td>
-                        </tr>
-                        <tr>
-                            <th>Address</th>
-                            <td>{{ bank.address }}</td>
-                        </tr>
-                    </table>
-                </div>
+    <div class="bank-card-wrapper row">
+        <div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="bank in vm.banks">
+            <div class="thumbnail bank-card">
+                <table class="table table-striped">
+                    <tr>
+                        <th>IFSC</th>
+                        <td>{{ bank.ifsc }}</td>
+                    </tr>
+                    <tr>
+                        <th>Branch</th>
+                        <td>{{ bank.branch }}</td>
+                    </tr>
+                    <tr>
+                        <th>District</th>
+                        <td>{{ bank.district }}</td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td>{{ bank.city }}</td>
+                    </tr>
+                    <tr>
+                        <th>State</th>
+                        <td>{{ bank.state }}</td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>{{ bank.address }}</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
-
-</div>
-
 </div>

@@ -55,7 +55,7 @@ class BranchIFSCView(APIView):
 
     def get(self, request, ifsc_code):
         try:
-            branch = Branch.objects.get(ifsc=ifsc_code)
+            branch = Branch.objects.get(ifsc__iexact=ifsc_code)
         except ObjectDoesNotExist:
             # HTTP_404_NOT_FOUND status
             raise NotFound('Branch not found for given IFSC code')
@@ -114,8 +114,8 @@ class BankBranchView(APIView):
                                        "to get all the branches of the Bank in the City."}
             return Response(response_data, status=HTTP_422_UNPROCESSABLE_ENTITY)
 
-        branches = Branch.objects.filter(city=city.upper(),
-                                         bank__name=bank.upper()).select_related("bank").values("ifsc", "bank__name",
+        branches = Branch.objects.filter(city__iexact=city,
+                                         bank__name__iexact=bank).select_related("bank").values("ifsc", "bank__name",
                                                                                                 "branch", "address",
                                                                                                 "city", "district",
                                                                                                 "state")

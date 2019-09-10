@@ -1,8 +1,3 @@
-header {
-    padding-bottom: 80px;
-
-}
-
 .container-fluid {
     max-width: 1200px;
 }
@@ -11,26 +6,24 @@ header {
     padding-bottom: 15px;
 }
 
-.action-anchor {
-    display: inline-block;
-    margin: 0 3px;
-    opacity: 0.85;
-    transition: all 0.1s ease 0s;
-    cursor: pointer;
-}
-
-.action-anchor:hover {
-    opacity: 1;
-    text-decoration: none;
-    transform: scale(1.20);
-    color: #2c3e50;
-}
-
 a:hover {
     text-decoration: none;
 }
 
 /*====================navbar===================*/
+.brand-centered {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.navbar-toggle {
+    z-index: 1;
+}
+
 .navbar-brand {
     font-size: 32px;
     padding-top: 5px;
@@ -57,6 +50,13 @@ a:hover {
     }
 }
 
+@media (min-width: 768px) {
+
+    .navbar {
+        border-radius: 0;
+    }
+}
+
 /*====================card======================*/
 
 .bank-card {
@@ -80,18 +80,18 @@ a:hover {
     .bank-card-wrapper {
         padding-top: 10px !important;
     }
-}
 
-@media screen and  (max-width: 820px) {
-
-    .bank-column {
-        padding-right: 0;
-        padding-left: 0;
+    .row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
     }
 
-    .content-wrapper {
-        padding-top: 10px;
-        padding-left: 35px;
+    .row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -106,4 +106,3 @@ a:hover {
     right: 0;
     min-height: 70px;
 }
-
