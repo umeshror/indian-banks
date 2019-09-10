@@ -23,6 +23,15 @@ This app has 2 API' as following:
    * '404': If records not found for given City and Bank name
    * '422': City name or Bank name or both are not provided in API
  
+
+To import db in postgres: *psql indian_bank < indian_banks.sql*
+ 
+To run server: *python manage.py runserver_plus* 
+
+To migrate : *python manage.py migrate*
+ 
+To run test cases: *python manage.py test* 
+
 You can access admin panel at:
 
 https://indianbankfinder.herokuapp.com/admin
