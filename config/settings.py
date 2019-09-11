@@ -8,7 +8,7 @@ PROJECT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardi
 
 PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'smhp$3)1*fzc8(ptv_1**kmtq!z+o^9)dsy(u8iijyeo&$(+mn')
 
 DEBUG = True
 
