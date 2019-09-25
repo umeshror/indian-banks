@@ -123,13 +123,13 @@ class BankBranchView(APIView):
             raise NotFound('No branch found for provided Bank and City.')
 
         data = [{
-            "ifsc": b["ifsc"],
-            "bank": b["bank__name"],
-            "branch": b["branch"],
-            "address": b["address"],
-            "city": b["city"],
-            "district": b["district"],
-            "state": b["state"]
-        } for b in branches]
+            "ifsc": branch["ifsc"],
+            "bank": branch["bank__name"],
+            "branch": branch["branch"],
+            "address": branchb["address"],
+            "city": branch["city"],
+            "district": branch["district"],
+            "state": branch["state"]
+        } for branch in branches]
 
         return Response(data)
