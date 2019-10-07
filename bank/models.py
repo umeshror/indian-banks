@@ -51,3 +51,4 @@ class Branch(models.Model):
     @property
     def bank_name(self):
         return self.bank.name
+    
